@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" th:replace="base::layout( 'Add Employee', ~{::section} )">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<section class="container mt-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 col-md-6 col-sm-6 container justify-content-center card">
+                <h2 class="text-center">Add a new Cabinet</h2>
+                <form th:action="@{/cabinet/save}" method="post">
+                    <div class="mb-3">
+                        <label for="name" class="form-label"><b>Cabinet Name</b></label>
+                        <input
+                                id="name"
+                                type="text"
+                                name="name"
+                                class="form-control"
+                        >
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label"><b>Cabinet Description</b></label>
+                        <input
+                                id="description"
+                                type="text"
+                                name="description"
+                                class="form-control"
+                        >
+                    </div>
+                    <div class="mb-3">
+                        <label for="employeeList" class="form-label">Available Employees</label>
+                        <select id="employeeList" class="form-select border-3" name="employeeList" multiple="multiple">
+                            <option th:each="emp: ${employees}" th:value="${emp.id}">
+                                <span th:text="${emp.id} + ' : ' + ${emp.name}"></span>
+                            </option>
+                        </select>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+</body>
+</html>

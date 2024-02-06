@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en" th:replace="base::layout( 'Add Employee', ~{::section} )">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+</head>
+<body>
+
+
+<section class="container mt-3">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 col-md-6 col-sm-6 container justify-content-center card">
+
+                <h2 class="text-center">Add a new Employee</h2>
+                <form action="/employee/save" method="post">
+                    <div class="mb-3">
+                        <label for="name" class="form-label"><b>Employee Name</b></label>
+                        <input
+                                id="name"
+                                type="text"
+                                name="name"
+                                class="form-control"
+                        >
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label"><b>Employee Email</b></label>
+                        <input
+                                id="email"
+                                type="email"
+                                name="email"
+                                class="form-control"
+                        >
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="contact" class="form-label"><b>Employee Contact</b></label>
+                        <input
+                                id="contact"
+                                type="text"
+                                name="contact"
+                                class="form-control"
+                        >
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="address" class="form-label"><b>Employee Address</b></label>
+                        <input
+                                id="address"
+                                type="text"
+                                name="address"
+                                class="form-control"
+                        >
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="joiningDate" class="form-label"><b>Employee Joining Date</b></label>
+                        <input
+                                id="joiningDate"
+                                type="date"
+                                name="joiningDate"
+                                class="form-control"
+                        >
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="designation" class="form-label">Employee Designation</label>
+                        <select id="designation" class="form-select" name="designation">
+                            <option selected value="Cabinet Secretary">Cabinet Secretary</option>
+                            <option value="Secretary">Secretary</option>
+                            <option value="Additional Secretary">Additional Secretary</option>
+                            <option value="Joint Secretary">Joint Secretary</option>
+                            <option value="Deputy Secretary">Deputy Secretary</option>
+                            <option value="Senior Assistant Secretary">Senior Assistant Secretary</option>
+                            <option value="Assistant Secretary">Assistant Secretary</option>
+                        </select>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+</body>
+</html>
